@@ -2,13 +2,17 @@
   "name": "play",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "workflow:run": "node scripts/run-browser-workflow.js",
+    "workflow:test": "npx playwright test tests/browser-workflow.spec.js --project=chromium",
+    "test": "npx playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.47.2",
+    "@playwright/test": "^1.54.2",
     "@types/node": "^22.7.0"
   }
 }
