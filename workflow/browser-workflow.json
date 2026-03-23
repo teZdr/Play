@@ -1,0 +1,33 @@
+{
+  "name": "browser-workflow",
+  "defaultTimeoutMs": 15000,
+  "steps": [
+    {
+      "action": "goto",
+      "name": "Open Playwright home page",
+      "url": "https://playwright.dev/",
+      "waitUntil": "domcontentloaded"
+    },
+    {
+      "action": "waitForSelector",
+      "name": "Wait for the Get started link",
+      "selector": "role=link[name=\"Get started\"]"
+    },
+    {
+      "action": "click",
+      "name": "Open the installation guide",
+      "selector": "role=link[name=\"Get started\"]"
+    },
+    {
+      "action": "expectVisible",
+      "name": "Confirm the installation heading is visible",
+      "selector": "role=heading[name=\"Installation\"]"
+    },
+    {
+      "action": "screenshot",
+      "name": "Capture the final page",
+      "path": "final-page.png",
+      "fullPage": true
+    }
+  ]
+}
